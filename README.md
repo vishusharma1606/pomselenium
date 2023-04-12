@@ -6,6 +6,6 @@ Selenium is a popular web automation framework that allows you to automate web b
 
 
 Prerequisite :--
-Install python
-pip install selenium
-Download webdriver ---https://chromedriver.chromium.org/downloads
+step1 -Install python
+step2 -pip install selenium
+step3-Download webdriver ---https://chromedriver.chromium.org/downloads
