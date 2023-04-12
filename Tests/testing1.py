@@ -18,6 +18,7 @@ from Pages.vendorstaff import VendorStaff
 from Pages.enterpriseadmin import EnterpriseAdmin
 from Pages.enterprisestaff import EnterpriseStaff
 from Pages.licencepage import Licence
+from Pages.profilepage.changefirstlastname import ProfilePage
 
 
 class LoginTest(unittest.TestCase):
@@ -212,6 +213,24 @@ class LoginTest(unittest.TestCase):
         licencepage = Licence(driver)
         licencepage.testsearch1()
         print("check_licence_page")
+
+    def test11_change_firstlastname(self):
+        driver = self.driver
+        login = LoginPage(driver)
+        login.enter_username()
+        login.enter_password()
+        login.click_login()
+        print("Login_succesfull")
+        time.sleep(4)
+
+        profile = ProfilePage(driver)
+        profile.testsearch1_profile_change_firstname_lastname()
+
+        homepage = HomePage(driver)
+        homepage.click_profile()
+        homepage.click_logout()
+        print("logout_successfull")
+        time.sleep(2)
 
     @classmethod
     def tearDownClass(cls):
